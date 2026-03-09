@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Table - Ni Nyoman</title>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #121212; color: #fff; margin: 0; padding: 20px; }
+        table { width: 100%; height: 80vh; border-collapse: collapse; border: 2px solid #ffcc00; }
+        td { border: 1px solid #444; padding: 20px; text-align: center; }
+        
+        .header { background: #ffcc00; color: #000; height: 100px; font-size: 1.5rem; font-weight: bold; }
+        .sidebar { background: #1e1e1e; width: 20%; vertical-align: top; color: #ffcc00; }
+        .content { background: #252525; width: 80%; vertical-align: top; }
+        .footer { background: #333; height: 50px; font-size: 0.9rem; }
+        
+        a.back { display: inline-block; margin-bottom: 20px; color: #ffcc00; text-decoration: none; border: 1px solid #ffcc00; padding: 5px 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back">← Kembali ke Home</a>
+    
+    <table>
+        <tr>
+            <td colspan="2" class="header">HEADER WEBSITE</td>
+        </tr>
+        <tr>
+            <td class="sidebar">
+                <h3>SIDEBAR</h3>
+                <p>Menu Navigasi</p>
+                <p>Link Terkait</p>
+                <p>Iklan/Widget</p>
+            </td>
+            <td class="content">
+                <h3>MAIN CONTENT</h3>
+                <p>Ini adalah area konten utama tempat informasi detail ditampilkan kepada pengunjung.</p>
+                <img src="https://via.placeholder.com/400x200" alt="Placeholder" style="border-radius:10px; border:1px solid #ffcc00; margin-top:20px;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="footer">FOOTER - &copy; 2026 Ni Nyoman Trisnayanti</td>
+        </tr>
+    </table>
+</body>
+</html>
