@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Kontak - Ni Nyoman Trisnayanti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Mengikuti style utama */
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #121212; color: #ffffff; display: flex; min-height: 100vh; }
+        
+        /* Sidebar (sama dengan index.html) */
+        .sidebar { width: 280px; background: #1a1a1a; padding: 40px 20px; border-right: 2px solid #ffcc00; }
+        .sidebar nav a { display: block; color: #ffffff; text-decoration: none; padding: 15px 20px; margin-bottom: 8px; font-weight: 600; border-radius: 10px; }
+        .sidebar nav a:hover, .sidebar nav a.active { background-color: #ffcc00; color: #121212; }
+        
+        /* Main Content */
+        .main-content { flex-grow: 1; padding: 40px; display: flex; justify-content: center; align-items: center; }
+        .form-card { background-color: #1e1e1e; padding: 40px; border-radius: 25px; width: 100%; max-width: 500px; border: 1px solid rgba(255, 204, 0, 0.3); }
+        
+        h2 { color: #ffcc00; text-align: center; margin-bottom: 25px; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: #ffcc00; }
+        input, textarea { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #333; background: #2a2a2a; color: white; font-family: inherit; }
+        
+        button { width: 100%; padding: 15px; background: #ffcc00; border: none; border-radius: 10px; color: #121212; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+        button:hover { background: #e6b800; transform: scale(1.02); }
+
+        @media (max-width: 768px) { body { flex-direction: column; } .sidebar { width: 100%; } }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="pendidikan.html">PENDIDIKAN</a>
+            <a href="skill.html">SKILL</a>
+            <a href="form.html" class="active">FORM</a>
+            <a href="kalkulator.html">KALKULATOR</a>
+            <a href="layout.html">LAYOUT</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="form-card">
+            <h2>Hubungi Saya</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="nama" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="contoh@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Pesan</label>
+                    <textarea name="pesan" rows="5" placeholder="Tuliskan sesuatu..." required></textarea>
+                </div>
+                <button type="submit">KIRIM PESAN</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

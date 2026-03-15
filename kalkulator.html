@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator - Ni Nyoman Trisnayanti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Menggunakan style yang sama dengan index.html */
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #121212; color: #ffffff; display: flex; min-height: 100vh; }
+        
+        /* Sidebar */
+        .sidebar { width: 280px; background: #1a1a1a; padding: 40px 20px; border-right: 2px solid #ffcc00; }
+        .sidebar nav a { display: block; color: #ffffff; text-decoration: none; padding: 15px 20px; margin-bottom: 8px; font-weight: 600; border-radius: 10px; }
+        .sidebar nav a:hover, .sidebar nav a.active { background-color: #ffcc00; color: #121212; }
+
+        /* Main Content */
+        .main-content { flex-grow: 1; padding: 40px; display: flex; justify-content: center; align-items: flex-start; }
+        .biodata-card { background-color: #1e1e1e; border: 1px solid rgba(255, 204, 0, 0.3); padding: 40px; border-radius: 25px; width: 100%; max-width: 400px; text-align: center; }
+
+        /* Kalkulator UI */
+        #display { width: 100%; height: 60px; font-size: 24px; text-align: right; margin-bottom: 20px; padding: 10px; border-radius: 10px; border: 1px solid #333; background: #2a2a2a; color: #ffcc00; }
+        .btn-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        button { padding: 20px; border: none; border-radius: 10px; background: #333; color: white; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #ffcc00; color: #121212; }
+        .operator { background: #444; color: #ffcc00; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="pendidikan.html">PENDIDIKAN</a>
+            <a href="skill.html">SKILL</a>
+            <a href="form.html">FORM</a>
+            <a href="kalkulator.html" class="active">KALKULATOR</a>
+            <a href="layout.html">LAYOUT</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="biodata-card">
+            <h2 style="color: #ffcc00; margin-bottom: 20px;">Kalkulator</h2>
+            <input type="text" id="display" disabled>
+            <div class="btn-grid">
+                <button onclick="clearDisplay()" style="background:#ff4444; color:white;">C</button>
+                <button class="operator" onclick="appendToDisplay('/')">/</button>
+                <button class="operator" onclick="appendToDisplay('*')">×</button>
+                <button class="operator" onclick="deleteLast()">DEL</button>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button class="operator" onclick="appendToDisplay('-')">-</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button class="operator" onclick="appendToDisplay('+')">+</button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button class="operator" onclick="calculate()" style="grid-row: span 2;">=</button>
+                <button onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const display = document.getElementById('display');
+        function appendToDisplay(input) { display.value += input; }
+        function clearDisplay() { display.value = ""; }
+        function deleteLast() { display.value = display.value.slice(0, -1); }
+        function calculate() { try { display.value = eval(display.value); } catch { display.value = "Error"; } }
+    </script>
+</body>
+</html>
